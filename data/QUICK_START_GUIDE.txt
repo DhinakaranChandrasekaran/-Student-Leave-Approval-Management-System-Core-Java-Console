@@ -1,0 +1,485 @@
+========================================
+STUDENT LEAVE MANAGEMENT SYSTEM
+QUICK START GUIDE
+========================================
+
+Welcome to the Student Leave Management System!
+This guide will help you get started quickly.
+
+========================================
+STEP 1: VERIFY PROJECT FILES
+========================================
+
+Check that you have these directories:
+[✓] src/model/
+[✓] src/service/
+[✓] src/util/
+[✓] src/main/
+[✓] data/
+
+Check that you have these files:
+[✓] src/model/Student.java
+[✓] src/model/LeaveRequest.java
+[✓] src/service/StudentService.java
+[✓] src/service/LeaveService.java
+[✓] src/service/FileService.java
+[✓] src/util/InputUtil.java
+[✓] src/main/Main.java
+[✓] src/main/MenuManager.java
+[✓] data/students.txt
+[✓] data/leaves.txt
+
+========================================
+STEP 2: COMPILE THE PROJECT
+========================================
+
+OPTION A: Using Script (Recommended)
+-------------------------------------
+chmod +x compile.sh
+./compile.sh
+
+OPTION B: Manual Compilation
+-----------------------------
+mkdir -p bin
+javac -d bin src/model/*.java src/util/*.java src/service/*.java src/main/*.java
+
+Expected Output:
+"Compilation successful!"
+
+========================================
+STEP 3: RUN THE APPLICATION
+========================================
+
+OPTION A: Using Script (Recommended)
+-------------------------------------
+chmod +x run.sh
+./run.sh
+
+OPTION B: Manual Execution
+---------------------------
+java -cp bin main.Main
+
+Expected Output:
+========================================
+   STUDENT LEAVE MANAGEMENT SYSTEM
+========================================
+Loading data...
+
+Students loaded successfully.
+Leave requests loaded successfully.
+
+System initialized successfully!
+
+========================================
+   STUDENT LEAVE MANAGEMENT SYSTEM
+========================================
+1. Student Management
+2. Leave Management
+3. Leave Statistics
+4. Exit
+========================================
+Enter choice:
+
+========================================
+STEP 4: FIRST TIME USAGE
+========================================
+
+1. START WITH ADDING STUDENTS
+   Menu: 1 → 1
+
+   Example:
+   Enter Register Number: CS101
+   Enter Name: Raj Kumar
+   Enter Department: Computer Science
+   Enter Year: 2
+   Enter Batch: 2023
+
+2. ADD MORE STUDENTS
+   Repeat the above process for multiple students
+
+3. VIEW YOUR STUDENTS
+   Menu: 1 → 2
+
+   You should see a table like:
+   REG NO          NAME            DEPARTMENT           YEAR       BATCH
+   --------------------------------------------------------------------------------
+   CS101           Raj Kumar       Computer Science     2          2023
+
+========================================
+STEP 5: APPLY LEAVE
+========================================
+
+1. GO TO LEAVE MANAGEMENT
+   Menu: 2 → 1
+
+2. APPLY LEAVE
+   Enter Register Number: CS101
+   Enter From Date (DD-MM-YYYY): 01-12-2024
+   Enter To Date (DD-MM-YYYY): 03-12-2024
+   Enter Reason: Medical Emergency
+
+3. VIEW LEAVE REQUESTS
+   Menu: 2 → 2
+
+   You should see:
+   LEAVE ID   REG NO          NAME                 FROM DATE    TO DATE      REASON          APPLIED      STATUS
+   --------------------------------------------------------------------------------------------------------------------------
+   L001       CS101           Raj Kumar            01-12-2024   03-12-2024   Medical...      29-11-2024   Pending
+
+========================================
+STEP 6: APPROVE OR REJECT LEAVE
+========================================
+
+1. APPROVE LEAVE
+   Menu: 2 → 3
+   Enter Leave ID: L001
+   Approve this leave? (Y/N): Y
+
+2. REJECT LEAVE
+   Menu: 2 → 4
+   Enter Leave ID: L002
+   Reject this leave? (Y/N): Y
+
+========================================
+STEP 7: VIEW STATISTICS
+========================================
+
+1. OVERALL STATISTICS
+   Menu: 3 → 1
+
+   Output:
+   Total Leave Requests: 5
+   Approved: 2
+   Pending: 2
+   Rejected: 1
+
+2. SEARCH BY REGISTER NUMBER
+   Menu: 3 → 2
+   Enter Register Number: CS101
+
+   Shows all leaves for that student
+
+3. FILTER BY STATUS
+   Menu: 3 → 4
+   Select: 1 (Pending)
+
+   Shows all pending leaves
+
+========================================
+STEP 8: LOAD SAMPLE DATA (OPTIONAL)
+========================================
+
+1. Open SAMPLE_DATA.txt
+2. Copy student data
+3. Paste into data/students.txt
+4. Copy leave data
+5. Paste into data/leaves.txt
+6. Restart application
+7. Data will be loaded automatically
+
+========================================
+MENU NAVIGATION GUIDE
+========================================
+
+MAIN MENU
+---------
+1 → Student Management
+2 → Leave Management
+3 → Leave Statistics
+4 → Exit
+
+STUDENT MANAGEMENT (Menu 1)
+----------------------------
+1 → Add Student
+2 → View Students
+3 → Update Student
+4 → Delete Student
+5 → Back to Main Menu
+
+LEAVE MANAGEMENT (Menu 2)
+--------------------------
+1 → Apply Leave
+2 → View Leave Requests
+3 → Approve Leave
+4 → Reject Leave
+5 → Delete Leave
+6 → Back to Main Menu
+
+STATISTICS (Menu 3)
+-------------------
+1 → View Overall Statistics
+2 → Search by Register Number
+3 → Filter by Reason
+4 → Filter by Status
+5 → Back to Main Menu
+
+========================================
+COMMON OPERATIONS
+========================================
+
+ADD A STUDENT
+-------------
+Main Menu → 1 → 1
+Fill in all details
+Student saved automatically
+
+VIEW ALL STUDENTS
+-----------------
+Main Menu → 1 → 2
+See table of all students
+
+APPLY LEAVE
+-----------
+Main Menu → 2 → 1
+Enter valid register number
+Fill leave details
+Leave ID auto-generated (L001, L002...)
+
+APPROVE LEAVE
+-------------
+Main Menu → 2 → 3
+Enter leave ID
+Confirm approval
+Status changes to "Approved"
+
+VIEW STATISTICS
+---------------
+Main Menu → 3 → 1
+See counts by status
+
+SEARCH LEAVES
+-------------
+Main Menu → 3 → 2
+Enter register number
+See all leaves for that student
+
+EXIT APPLICATION
+----------------
+Main Menu → 4
+Application closes
+
+========================================
+TIPS AND TRICKS
+========================================
+
+✓ Always add students before applying leaves
+✓ Register numbers must be unique
+✓ Leave IDs are auto-generated (don't enter manually)
+✓ Only pending leaves can be approved/rejected
+✓ All data is saved automatically
+✓ Use consistent date format: DD-MM-YYYY
+✓ Use 5 (Back) to return to previous menu
+✓ Press Enter when prompted to continue
+
+========================================
+TROUBLESHOOTING
+========================================
+
+PROBLEM: Compilation Error
+SOLUTION: Check Java version (requires Java 8+)
+          Verify all .java files are present
+
+PROBLEM: "Student not found"
+SOLUTION: Add the student first before applying leave
+
+PROBLEM: "Leave is already Approved"
+SOLUTION: You can only approve/reject pending leaves
+
+PROBLEM: Data not saving
+SOLUTION: Check data/ directory has write permissions
+
+PROBLEM: File not found
+SOLUTION: Ensure data/students.txt and data/leaves.txt exist
+
+========================================
+DATA FILE LOCATIONS
+========================================
+
+Student Data:  data/students.txt
+Leave Data:    data/leaves.txt
+Compiled Code: bin/ (auto-generated)
+
+========================================
+KEYBOARD SHORTCUTS
+========================================
+
+Ctrl+C → Force quit application
+Ctrl+D → End of input (Unix/Linux)
+Ctrl+Z → End of input (Windows)
+
+========================================
+SAMPLE WORKFLOW
+========================================
+
+1. Start Application
+   ./run.sh
+
+2. Add 3 Students
+   Menu: 1 → 1 (repeat 3 times)
+
+3. View Students
+   Menu: 1 → 2
+
+4. Apply 2 Leaves
+   Menu: 2 → 1 (repeat 2 times)
+
+5. View Leaves
+   Menu: 2 → 2
+
+6. Approve 1 Leave
+   Menu: 2 → 3
+
+7. View Statistics
+   Menu: 3 → 1
+
+8. Exit
+   Menu: 4
+
+========================================
+VALIDATION RULES
+========================================
+
+STUDENT:
+- Register number must be unique
+- All fields are required
+
+LEAVE:
+- Student must exist in system
+- From date and to date required
+- Reason required
+- Status auto-set to "Pending"
+
+APPROVE/REJECT:
+- Leave must exist
+- Status must be "Pending"
+
+========================================
+AUTO-GENERATED FIELDS
+========================================
+
+Leave ID:      L001, L002, L003... (auto)
+Applied Date:  Current date (auto)
+Status:        Pending (default)
+
+========================================
+DATE FORMAT
+========================================
+
+Required Format: DD-MM-YYYY
+
+Valid Examples:
+01-12-2024
+15-01-2025
+31-03-2025
+
+Invalid Examples:
+2024-12-01 (wrong order)
+12/01/2024 (wrong separator)
+1-12-24 (incomplete)
+
+========================================
+FILE FORMAT EXPLAINED
+========================================
+
+students.txt:
+regNo,name,department,year,batch
+
+Example:
+CS101,Raj Kumar,Computer Science,2,2023
+
+leaves.txt:
+leaveId,regNo,studentName,fromDate,toDate,reason,appliedDate,status
+
+Example:
+L001,CS101,Raj Kumar,01-12-2024,03-12-2024,Medical,29-11-2024,Pending
+
+========================================
+GETTING HELP
+========================================
+
+Read Documentation:
+- README.txt (Basic instructions)
+- PROJECT_SUMMARY.txt (Complete overview)
+- PROJECT_STRUCTURE.txt (Architecture)
+- SAMPLE_DATA.txt (Test data)
+
+Check Code:
+- All Java files are well-commented
+- Method names are self-explanatory
+- Clear error messages provided
+
+========================================
+CUSTOMIZATION
+========================================
+
+To modify student fields:
+→ Edit src/model/Student.java
+
+To modify leave fields:
+→ Edit src/model/LeaveRequest.java
+
+To change menu options:
+→ Edit src/main/MenuManager.java
+
+To modify validation rules:
+→ Edit src/service/*.java
+
+To change file format:
+→ Edit src/service/FileService.java
+
+========================================
+BACKUP YOUR DATA
+========================================
+
+Important files to backup:
+- data/students.txt
+- data/leaves.txt
+
+Backup command:
+cp -r data/ data_backup/
+
+Restore command:
+cp -r data_backup/* data/
+
+========================================
+SUCCESS CHECKLIST
+========================================
+
+After following this guide, you should be able to:
+[✓] Compile the project
+[✓] Run the application
+[✓] Add students
+[✓] View students
+[✓] Update students
+[✓] Delete students
+[✓] Apply leave
+[✓] View leaves
+[✓] Approve leaves
+[✓] Reject leaves
+[✓] View statistics
+[✓] Search and filter leaves
+
+========================================
+NEXT STEPS
+========================================
+
+1. Try all CRUD operations
+2. Load sample data and test
+3. Verify file persistence
+4. Test all validation rules
+5. Explore all menu options
+6. Customize as needed
+
+========================================
+ENJOY USING THE SYSTEM!
+========================================
+
+You now have a fully functional Student Leave
+Management System with all features working.
+
+The system follows industry-standard coding
+practices and is production-ready.
+
+Happy coding!
+
+========================================

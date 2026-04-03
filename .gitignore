@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Java build output
+bin/
+out/
+*.class
+
+# IDE settings
+.vscode/
+.idea/
+*.iml

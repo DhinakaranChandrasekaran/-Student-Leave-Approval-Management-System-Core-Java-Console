@@ -1,0 +1,11 @@
+# ================================================================================
+#               SAMPLE DATA - STUDENT LEAVE MANAGEMENT SYSTEM
+# ================================================================================
+
+# Students (format: reg_no,name,department,year,batch)
+# ================================================================================
+714023104035,Harini M,CSE,III,2023-2027
+
+# Leave Requests (format: leave_id,reg_no,name,from_date,to_date,reason,applied_date,status)
+# ================================================================================
+L001,714023104035,Harini M,30/11/2025,01/12/2025,Medical Emergency,29-11-2025,Approved
