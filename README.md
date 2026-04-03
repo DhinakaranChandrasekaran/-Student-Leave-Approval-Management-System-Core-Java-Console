@@ -1,10 +1,10 @@
-# 📌 Student Leave Management System — Core Java Console
+# Student Leave Management System — Core Java Console
 
 A console-based Leave Management System that allows students to apply for leave and administrators to review, approve, or reject requests through a user-friendly menu-driven interface.
 
 The system is designed using a structured, modular approach with persistent storage to maintain leave history, ensuring efficient tracking and management of requests.
 
-## 🚀 Features
+## Features
 - 👨‍🎓 Student Leave Application
 - 🧑‍💼 Admin Approval/Rejection System
 - 📋 Leave History Tracking
@@ -12,7 +12,7 @@ The system is designed using a structured, modular approach with persistent stor
 - 🖥️ Menu-driven Console Interface
 - 🧩 Modular and Structured Code Design
 
-## 🛠️ Tech Stack
+## Tech Stack
 - Core Java  
 - Java 17  
 - MySQL  
